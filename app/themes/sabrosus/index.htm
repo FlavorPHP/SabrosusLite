@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{conf.language}" xml:lang="{conf.language}">
+	<head>
+    	<title>sabros.us lite / {title}</title>
+		<meta name="generator" content="mini-sabros.us 1.0" />		
+        {includes}
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#tags").jTagging($("#tagslst"), " ");
+				$('input[title!=""]').hint();
+				$('textarea[title!=""]').hint();
+				$("#divMessages").fadeOut(5000,function(){
+					$("#divMessages").css({display:"none"});
+				});				
+			});
+		</script>
+	</head>
+    <body>
+        <div id="pagina">
+			<div id="titulo">
+		    	<h2>        	
+					{conf.name} / <a href="{path}">sabros.us lite</a> {if  isset({$tagtag}) and {$tagtag}==''}{tagtag}{/if} 
+				</h2>
+				<ul id="submenu">
+					<li><a href="{path}index/what" title="{__('What is sabros.us lite?')}">{__('What is sabros.us lite?')}</a></li>
+		         </ul>
+		         <ul id="submenu_derecho">
+		        	<li>
+					{if isset({$session.logged}) and {$session.logged}}
+						<a href="{path}admin/" title="{__('Control panel')}">{__('Manage bookmarks')}</a>
+					{else}
+						<a href="{path}admin/login/" title="{__('Start session')}">{__('Login')}</a>
+					{/if}
+					</li> 
+		         </ul>
+			</div>
+			<div id="contenido">
+				<div id="indicador_pagina">{__('There are')} <strong>{totalRows}</strong> {__('links. Showing from')} <strong>{from}</strong> {__('to')} <strong>{to}</strong></div>
+				{block {$links} as {$link}}
+			        <div class="enlace">
+						<h3>
+			            	<a href="{$link.url}" title="{$link.title}">{$link.title}</a>
+							{if isset({$session.logged}) and {$session.logged}}{$link.linkToBox}{/if}
+			            </h3>
+			        	
+			            <p>{$link.description}</p>
+			            <p class="pie">{$link.tags} {__('at')} {$link.created}</p>
+			        </div>
+				{/block}
+				{pagination}
+			</div>
+			{cloud}
+			<div id="pie">
+				<p class="powered">{__('Powered by ')}<a href="http://sabros.us/">sabros.us lite</a></p>
+				<p>{linkTo.feed}</p>
+			</div>
+        </div>
+	</div>
+    </body>
+</html>
