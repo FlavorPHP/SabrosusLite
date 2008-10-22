@@ -1,6 +1,6 @@
 <?php
 
-class admin_controller extends controller {
+class admin_controller extends appcontroller {
 
 	private $conf;
 	

@@ -1,6 +1,6 @@
 <?php
 
-class index_controller extends controller {
+class index_controller extends appcontroller {
 
 	private $conf;
 	

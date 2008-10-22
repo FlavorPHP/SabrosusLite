@@ -1,6 +1,6 @@
 <?php
 
-class tag_controller extends controller {
+class tag_controller extends appcontroller {
 
 	private $conf;
 	
