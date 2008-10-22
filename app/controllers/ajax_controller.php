@@ -1,6 +1,6 @@
 <?php
 
-class ajax_controller extends controller {
+class ajax_controller extends appcontroller {
 	
 	private $conf;
 	

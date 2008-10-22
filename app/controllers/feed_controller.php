@@ -1,6 +1,6 @@
 <?php
 
-class feed_controller extends controller {
+class feed_controller extends appcontroller {
 
 	private $conf;
 	
