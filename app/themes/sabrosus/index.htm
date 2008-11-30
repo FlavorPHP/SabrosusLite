@@ -20,14 +20,14 @@
         <div id="pagina">
 			<div id="titulo">
 		    	<h2>
-					{conf.name} / <a href="{path}">sabros.us lite</a> {if isset({$tagtag}) and {$tagtag}!=''}{tagtag}{/if}
+					{conf.name} / <a href="{path}">sabros.us lite</a> {if isset($tagtag) and $tagtag!=''}{tagtag}{/if}
 				</h2>
 				<ul id="submenu">
 					<li><a href="{path}index/what" title="{__('What is sabros.us lite?')}">{__('What is sabros.us lite?')}</a></li>
 		         </ul>
 		         <ul id="submenu_derecho">
 		        	<li>
-					{if isset({$session.logged}) and {$session.logged}}
+					{if isset($session.logged) and $session.logged}
 						<a href="{path}admin/" title="{__('Control panel')}">{__('Manage bookmarks')}</a>
 					{else}
 						<a href="{path}admin/login/" title="{__('Start session')}">{__('Login')}</a>
@@ -37,11 +37,11 @@
 			</div>
 			<div id="contenido">
 				<div id="indicador_pagina">{__('There are')} <strong>{totalRows}</strong> {__('links. Showing from')} <strong>{from}</strong> {__('to')} <strong>{to}</strong></div>
-				{block {$links} as {$link}}
+				{block $links as $link}
 			        <div class="enlace">
 						<h3>
 			            	<a href="{$link.url}" title="{$link.title}">{$link.title}</a>
-							{if isset({$session.logged}) and {$session.logged}}{$link.linkToBox}{/if}
+							{if isset($session.logged) and $session.logged}{$link.linkToBox}{/if}
 			            </h3>
 
 			            <p>{$link.description}</p>
