@@ -53,13 +53,13 @@ abstract class controller {
 		exit();
 	}
 	
-	public function renderTheme($theme,$file='index'){
-		$path = Absolute_Path."app".DIRSEP."themes".DIRSEP.$theme.DIRSEP."$file.htm";			
+	public function renderTheme($theme,$file='index.htm'){
+		$path = Absolute_Path."app".DIRSEP."themes".DIRSEP.$theme.DIRSEP."$file";			
 		echo $this->themes->fetch($path);
 	}
 
-	public function fetchTheme($theme,$file='index'){
-		$path = Absolute_Path."app".DIRSEP."themes".DIRSEP.$theme.DIRSEP."$file.htm";			
+	public function fetchTheme($theme,$file='index.htm'){
+		$path = Absolute_Path."app".DIRSEP."themes".DIRSEP.$theme.DIRSEP."$file";			
 		return $this->themes->fetch($path);
 	}
 	
